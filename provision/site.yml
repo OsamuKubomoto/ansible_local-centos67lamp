@@ -1,0 +1,17 @@
+- name: ansible_local
+  hosts: 127.0.0.1
+  user: vagrant
+  sudo: yes
+
+  roles:
+    - common
+    - git
+    - httpd
+    - vagrantSyncedfolder
+    - php
+    - mysql
+    - phpMyAdmin
+    - nodejs
+    - bower
+    - composer
+    - ntp
