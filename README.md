@@ -23,12 +23,13 @@ Vagrant1.8.1
 
 ダウンロードする
 
-    $ git clone https://github.com/OsamuKubomoto/ansible_local-centos67lamp.git provision
+    $ git clone https://github.com/OsamuKubomoto/ansible_local-centos67lamp.git test-ansible-local
 
 /provision/group_vars/allを適宜修正してください。
 
 仮想マシン起動＆プロビジョン
 
+    $ cd test-ansible-local
     $ vagrant up
 
 2回目以降のプロビジョン実行
