@@ -1,5 +1,5 @@
 - name: be sure PHP is installed
-  yum: name={{ item }} enablerepo=epel,remi
+  yum: name={{ item }} enablerepo=epel,remi,remi-php56
   with_items:
     - php
     - php-common
