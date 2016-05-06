@@ -1,42 +1,40 @@
 # README
 
-ansible_local‚ğg‚Á‚ÄƒvƒƒrƒWƒ‡ƒjƒ“ƒO‚·‚éplaybook‚ğì‚è‚Ü‚µ‚½B
+ansible_localã‚’ä½¿ã£ã¦ãƒ—ãƒ­ãƒ“ã‚¸ãƒ§ãƒ‹ãƒ³ã‚°ã™ã‚‹playbookã‚’ä½œã‚Šã¾ã—ãŸã€‚
 
-## ŠJ”­ŠÂ‹«
+[2016-05-05è¿½è¨˜]
+vagrant1.8.1ã§ansible_localã‚’åˆ©ç”¨ã™ã‚‹ã¨ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã™ã€‚
+v1.8.2ã§ä¿®æ­£ã•ã‚Œã‚‹ã¾ã§ã¯æ‰‹å‹•ã§ãƒ—ãƒ­ãƒ“ã‚¸ãƒ§ãƒ³å®Ÿè¡Œã™ã‚‹å‰æã¨ã—ã¾ã™ã€‚
 
-VirtualBox5.0.16
+
+## é–‹ç™ºç’°å¢ƒ
+
+VirtualBox5.0.20
 Vagrant1.8.1
 
-### OS‚Æƒ~ƒhƒ‹ƒEƒFƒA‚Ìƒo[ƒWƒ‡ƒ“ ¦2016-02-04“_
+### OSã¨ãƒŸãƒ‰ãƒ«ã‚¦ã‚§ã‚¢ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ â€»2016-05-05æ™‚ç‚¹
 
- * centos 6.7
+ * centos 6.7 (bento/centos-6.7 2.2.6)
  * Apache 2.2.15
- * PHP 5.4.45
- * mysql 5.5.48
+ * PHP 5.6.21
+ * mysql 5.5.49
  * nodejs v0.10.42
  * npm 1.3.6
- * bower 1.7.7
- * Composer 1.0-dev
+ * bower 1.7.9
+ * Composer 1.0.3
 
 
-## \’zè‡
+## æ§‹ç¯‰æ‰‹é †
 
-ƒ_ƒEƒ“ƒ[ƒh‚·‚é
+ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
 
     $ git clone https://github.com/OsamuKubomoto/ansible_local-centos67lamp.git test-ansible-local
 
-/provision/group_vars/all‚ğ“K‹XC³‚µ‚Ä‚­‚¾‚³‚¢B
+/provision/group_vars/allã‚’é©å®œä¿®æ­£ã—ã¦ãã ã•ã„ã€‚
 
-‰¼‘zƒ}ƒVƒ“‹N“®•ƒvƒƒrƒWƒ‡ƒ“
+ä»®æƒ³ãƒã‚·ãƒ³èµ·å‹•ï¼†ãƒ—ãƒ­ãƒ“ã‚¸ãƒ§ãƒ³
 
     $ cd test-ansible-local
     $ vagrant up
-
-2‰ñ–ÚˆÈ~‚ÌƒvƒƒrƒWƒ‡ƒ“Às
-
-    $ vagrant provision
-
-¦ windows‚ÅƒvƒƒrƒWƒ‡ƒ“‚ğÀs‚·‚é‚Æã‹LƒGƒ‰[‚ª”­¶‚µ‚Ü‚·i2016”N3Œ14“ú“_jB–Ê“|‚Å‚·‚ª¡Œã‚ÌƒAƒbƒvƒf[ƒg‚ÅC³‚³‚ê‚é‚Ü‚Å‚Í‰º‹LƒRƒ}ƒ“ƒh‚ÅÀs‚µ‚Ü‚µ‚å‚¤B
-
-    vagrant ssh -c "cd /vagrant && ansible-playbook -c local provision/site.yml"
+    $ vagrant ssh -c "cd /vagrant && ansible-playbook -c local provision/site.yml"
 
