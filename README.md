@@ -2,26 +2,21 @@
 
 ansible_localを使ってプロビジョニングするplaybookを作りました。
 
-[2016-05-05追記]
-vagrant1.8.1でansible_localを利用するとエラーが発生します。
-v1.8.2で修正されるまでは手動でプロビジョン実行する前提とします。
-
-
 ## 開発環境
 
-VirtualBox5.0.20
-Vagrant1.8.1
+VirtualBox5.0.22
+Vagrant1.8.4
 
-### OSとミドルウェアのバージョン ※2016-05-05時点
+### OSとミドルウェアのバージョン ※2016-06-29時点
 
- * centos 6.7 (bento/centos-6.7 2.2.6)
+ * centos 6.7
  * Apache 2.2.15
- * PHP 5.6.21
- * mysql 5.5.49
+ * PHP 5.6.23
+ * mysql 5.5.50
  * nodejs v0.10.42
  * npm 1.3.6
  * bower 1.7.9
- * Composer 1.0.3
+ * Composer 1.1.3
 
 
 ## 構築手順
@@ -32,9 +27,33 @@ Vagrant1.8.1
 
 /provision/group_vars/allを適宜修正してください。
 
-仮想マシン起動＆プロビジョン
+ゲストOSを起動
 
     $ cd test-ansible-local
     $ vagrant up
-    $ vagrant ssh -c "cd /vagrant && ansible-playbook -c local provision/site.yml"
+
+初回起動時、下記のように共有フォルダのマウントでエラーが起きる場合は、以下の手順で進めます。
+
+    ==> default: Mounting shared folders...
+        default: /vagrant => path/to/test-ansible-local
+    
+    Failed to mount folders in Linux guest. This is usually because
+    the "vboxsf" file system is not available. Please verify that
+    the guest additions are properly installed in the guest and
+    can work properly. The command attempted was:
+    
+    mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group vagrant | cut -d: -f3`,dmode=777,fmode=777 vagrant /vagrant
+    mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant`,dmode=777,fmode=777 vagrant /vagrant
+    
+    The error output from the last command was:
+    
+    /sbin/mount.vboxsf: mounting failed with the error: No such device
+
+ゲストOSのカーネルをアップデートします。
+
+    $ vagrant ssh -c "sudo yum update -y kernel"
+
+ゲストOSを再起動
+
+    $ vagrant reload
 

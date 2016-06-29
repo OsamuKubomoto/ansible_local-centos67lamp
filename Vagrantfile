@@ -16,11 +16,12 @@ Vagrant.configure(2) do |config|
     v.linked_clone = true
   end
 
-  if ARGV[0] == 'up'
-    config.vm.provision :shell, :inline => "yum install -y epel-release && yum install -y ansible1.9"
-    # config.vm.provision "ansible_local" do |ansible|
-    #   ansible.playbook = "provision/site.yml"
-    # end
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook       = "provision/site.yml"
+    ansible.verbose        = true
+    ansible.install        = true
+    ansible.limit          = "all" # or only "nodes" group, etc.
+    ansible.inventory_path = "provision/hosts"
   end
 
 end
