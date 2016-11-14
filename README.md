@@ -7,16 +7,16 @@ ansible_localを使ってプロビジョニングするplaybookを作りまし�
 VirtualBox5.0.22
 Vagrant1.8.4
 
-### OSとミドルウェアのバージョン ※2016-06-29時点
+### OSとミドルウェアのバージョン ※2016-11-14時点
 
  * centos 6.7
  * Apache 2.2.15
- * PHP 5.6.23
- * mysql 5.5.50
- * nodejs v0.10.42
+ * PHP 5.6.28
+ * mysql 5.5.53
+ * nodejs v0.10.46
  * npm 1.3.6
- * bower 1.7.9
- * Composer 1.1.3
+ * bower 1.8.0
+ * Composer 1.2.2
 
 
 ## 構築手順
