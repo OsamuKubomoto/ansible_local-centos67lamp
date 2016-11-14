@@ -1,8 +1,8 @@
-- name: be sure rpmforge repositories is installed
-  yum: name=http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+- name: be sure wing repositories is installed
+  get_url: url=http://wing-repo.net/wing/6/EL6.wing.repo dest=/etc/yum.repos.d/EL6.wing.repo mode=0440
 
 - name: enable off repositories
-  replace: dest=/etc/yum.repos.d/rpmforge.repo regexp="enabled *= *1" replace="enabled=0"
+  replace: dest=/etc/yum.repos.d/EL6.wing.repo regexp="enabled *= *1" replace="enabled=0"
 
 - name: be sure git is installed
-  yum: name=git enablerepo=rpmforge-extras state=present
+  yum: name=git enablerepo=wing state=present
