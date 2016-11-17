@@ -11,6 +11,7 @@
     - php-mysql
     - phpMyAdmin
     - php-pdo
+    - php-xdebug
     - php-xml
     - php-xmlrpc
     - php-intl
@@ -27,3 +28,6 @@
   template: src=php.ini dest=/etc/php.ini mode=0644
   notify: restart httpd
 
+- name: edit xdebug.ini
+  template: src=xdebug.ini dest=/etc/php.d/xdebug.ini mode=0644
+  notify: restart httpd

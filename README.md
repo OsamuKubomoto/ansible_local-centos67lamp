@@ -25,7 +25,8 @@ Vagrant1.8.4
 
     $ git clone https://github.com/OsamuKubomoto/ansible_local-centos67lamp.git test-ansible-local
 
-/provision/group_vars/allを適宜修正してください。
+/Vagrantfileと/provision/group_vars/allを適宜修正してください。
+
 
 ゲストOSを起動
 
@@ -56,4 +57,8 @@ Vagrant1.8.4
 ゲストOSを再起動
 
     $ vagrant reload
+
+たまに回線の状態によってはyumリポジトリのダウンロードに失敗して処理が中断されることがあるので、その場合は手動でプロビジョニングを再実行する。
+
+    $ vagrant provision
 
