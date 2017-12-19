@@ -20,7 +20,7 @@
 - name: be sure yum repositories is installed
   yum: name={{ item }}
   with_items:
-    - http://ftp-srv2.kddilabs.jp/Linux/distributions/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
+    - http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm 
     - http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 - name: enable off repositories
